@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+
+<body>
+
+<h1>File Tool</h1>
+
+Browsing file: <strong><span th:text="${datFile}"/></strong> using copybook: <strong><span th:text="${cpyFile}"/></strong>
+<p></p><p></p>
+<table border="1" style="font-family:monospace;">
+	<thead>
+		<tr>
+			<th th:each="field: ${fields}">
+				<span th:text="${field.name}"></span>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="row : ${rows}">
+			<td th:text="${row.values[0].value}"></td>
+			<td th:text="${row.values[1].value}"></td>
+		</tr>
+	</tbody>
+</table>
+<p></p>
+<a href="javascript:history.back()">Back</a>
+</body>
+</html>
